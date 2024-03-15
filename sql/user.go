@@ -106,7 +106,7 @@ func (c *Connector) CreateUser(ctx context.Context, database string, user *model
                 BEGIN
                   IF @objectId != ''
                     BEGIN
-                      SET @stmt = 'CREATE USER ' + QuoteName(@username) + ' FROM EXTERNAL PROVIDER WITH OBJECT_ID = ' + @objectId
+                      SET @stmt = 'CREATE USER ' + QuoteName(@username) + ' FROM EXTERNAL PROVIDER WITH OBJECT_ID = ''' + @objectId + ''''
                     END
                   ELSE
                     BEGIN
